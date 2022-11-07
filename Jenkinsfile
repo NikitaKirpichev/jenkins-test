@@ -1,4 +1,8 @@
 pipeline {
+   stage('Initialize'){
+        def dockerHome = tool 'myDocker'
+        env.jenkins_home = "/usr/bin/docker"
+  }
   agent { 
     docker { 
       image 'mcr.microsoft.com/playwright:v1.27.1-focal'

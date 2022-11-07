@@ -7,17 +7,14 @@ pipeline {
   stages {
     stage('install playwright') {
       steps {
-        sh '''
-          npm i -D @playwright/test
-          npx playwright install
-        '''
+        sh 'npm i -D @playwright/test'
+        sh 'npx playwright install'
+        
       }
     }
     stage('test') {
       steps {
-        sh '''
-          npx playwright test
-        '''
+        sh 'npx playwright test'
       }
       
     }

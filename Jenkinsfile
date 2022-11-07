@@ -8,7 +8,7 @@ pipeline {
     stage('Initialize'){
       steps{
         def dockerHome = tool 'myDocker'
-        env.jenkins_home = "/usr/bin/docker"
+        dockerHome.jenkins_home = "/usr/bin/docker"
         }
     }
     stage('install playwright') {

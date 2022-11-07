@@ -1,14 +1,14 @@
 pipeline {
-   stage('Initialize'){
-        def dockerHome = tool 'myDocker'
-        env.jenkins_home = "/usr/bin/docker"
-  }
   agent { 
     docker { 
       image 'mcr.microsoft.com/playwright:v1.27.1-focal'
     } 
   }
   stages {
+    stage('Initialize'){
+        def dockerHome = tool 'myDocker'
+        env.jenkins_home = "/usr/bin/docker"
+    }
     stage('install playwright') {
       steps {
         sh 'npm i -D @playwright/test'

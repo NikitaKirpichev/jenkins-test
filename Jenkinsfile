@@ -1,5 +1,5 @@
 pipeline {
-   agent { dockerfile true }
+   agent { dockerfile {filename 'Dockerfile', label 'VM-Linux-Agent', args "-v /home/user/jenkins-test:/var/jenkins-test"} }
    stages {
       stage('e2e-tests') {
          steps {

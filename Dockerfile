@@ -10,6 +10,6 @@ RUN echo "deb [arch=$(dpkg --print-architecture) \
 RUN apt-get update && apt-get install -y docker-ce-cli
 RUN apt-get install sudo
 RUN sudo apt install nodejs
-RUN sudo apt install npm
+RUN sudo apt-get install npm
 USER jenkins
 RUN jenkins-plugin-cli --plugins "mcr.microsoft.com/playwright:v1.27.1-focal"

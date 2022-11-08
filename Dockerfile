@@ -1,4 +1,5 @@
 FROM jenkins/jenkins:jdk11
+RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER root
 
 # Set up the Chrome PPA

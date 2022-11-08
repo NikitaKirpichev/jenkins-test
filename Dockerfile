@@ -1,5 +1,4 @@
-FROM jenkins/jenkins:jdk11
-RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+FROM mcr.microsoft.com/playwright:v1.16.2-focal
 USER root
 
 # Set up the Chrome PPA

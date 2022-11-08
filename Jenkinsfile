@@ -2,11 +2,6 @@ pipeline {
    agent any
    tools {nodejs "nodejs"}
    stages {
-      stage('docker build') {
-         steps {
-            sh 'docker build -t dockerfile .'
-         }
-      }
 
       stage('init') {
          steps {

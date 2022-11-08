@@ -12,7 +12,7 @@ pipeline {
 
       stage('test') {
          steps {
-            sh 'npx playwright test login.spec.ts --headed'
+            sh 'npx playwright test'
          }
       }
    }

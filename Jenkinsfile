@@ -6,7 +6,7 @@ pipeline {
          steps {
             sh 'npm install -D @playwright/test'
             sh 'npm install playwright'
-            sh 'sudo npx playwright install-deps'
+            sh 'npx playwright install-with-dep'
          }
       }
 

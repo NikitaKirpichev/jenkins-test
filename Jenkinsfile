@@ -6,7 +6,9 @@ pipeline {
          steps {
             sh 'npm install -D @playwright/test'
             sh 'npm install playwright'
+            sh 'apt-get install libglib2.0-0'
             sh 'npx playwright install-deps chromium --dry-run'
+            
          }
       }
 

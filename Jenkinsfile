@@ -3,7 +3,7 @@ pipeline {
    stages {
       stage('e2e-tests') {
          steps {
-            echo 'hi'
+            sh 'npm install'
          }
       }
    }

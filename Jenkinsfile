@@ -3,11 +3,10 @@ pipeline {
    stages {
       stage('e2e-tests') {
          steps {
-          nodejs(nodeJSInstallationName: 'Node 18.12.1') {
-                    sh 'npm config ls'
-                }
+          withNPM(npmrcConfig: 'my-custom-nprc') {
+    sh 'npm install'
+}
             // Depends on your language / test framework
-            sh 'npm install'
             sh 'npx playwright test'
          }
       }

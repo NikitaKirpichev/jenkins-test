@@ -11,6 +11,7 @@ RUN echo "deb [arch=$(dpkg --print-architecture) \
   $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
 RUN apt-get update && apt-get install -y docker-ce-cli
 
-RUN sudo npx playwright install-deps   
+RUN sudo npx playwright install-deps
+RUN sudo apt-get install libglib2.0-0
 USER jenkins 
 RUN jenkins-plugin-cli --plugins "mcr.microsoft.com/playwright:v1.27.1-focal"

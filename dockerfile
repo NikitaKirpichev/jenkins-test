@@ -10,3 +10,4 @@ RUN echo "deb [arch=$(dpkg --print-architecture) \
 RUN apt-get update && apt-get install -y docker-ce-cli
 USER jenkins
 RUN jenkins-plugin-cli --plugins "mcr.microsoft.com/playwright:v1.27.1-focal"
+FROM mcr.microsoft.com/playwright:v1.27.1-focal

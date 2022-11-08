@@ -8,5 +8,8 @@ RUN echo "deb [arch=$(dpkg --print-architecture) \
   https://download.docker.com/linux/debian \
   $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
 RUN apt-get update && apt-get install -y docker-ce-cli
+RUN apt-get install sudo
+RUN sudo apt install nodejs
+RUN sudo apt install npm
 USER jenkins
 RUN jenkins-plugin-cli --plugins "mcr.microsoft.com/playwright:v1.27.1-focal"

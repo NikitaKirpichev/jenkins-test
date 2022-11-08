@@ -1,8 +1,6 @@
 FROM jenkins/jenkins:jdk11
 USER root
 
-RUN apt-get install nodejs
-RUN apt-get install npm
 
 RUN apt-get update && apt-get install -y lsb-release
 RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \

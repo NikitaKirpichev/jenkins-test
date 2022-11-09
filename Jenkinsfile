@@ -4,6 +4,7 @@ pipeline {
 
       stage('init') {
          steps {
+            sh 'npm install'
             sh 'npm install -D @playwright/test'
             sh 'npm install playwright'
          }

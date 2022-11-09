@@ -1,20 +1,10 @@
 pipeline {
-   agent any
-   tools {nodejs 'nodejs'}
+   agent { docker { image 'mcr.microsoft.com/playwright:v1.27.1-focal' } }
    stages {
-      stage('init') {
+      stage('e2e-tests') {
          steps {
-
-            sh 'npm install -D @playwright/test'
-            sh 'npm install playwright'
-            sh 'npx playwright install'
-            
-
-         }
-      }
-
-      stage('test') {
-         steps {
+            // Depends on your language / test framework
+            sh 'npm install'
             sh 'npx playwright test'
          }
       }

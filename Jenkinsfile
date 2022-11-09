@@ -7,7 +7,7 @@ pipeline {
             sh 'npm install -D @playwright/test'
             sh 'npm install playwright'
             sh 'npx playwright install'
-            sh 'npx playwright install-deps --dry-run'
+            sh 'npx playwright install --with-deps chromium'
 
          }
       }

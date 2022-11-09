@@ -4,10 +4,11 @@ pipeline {
    stages {
       stage('init') {
          steps {
+
             sh 'npm install -D @playwright/test'
             sh 'npm install playwright'
             sh 'npx playwright install'
-            sh 'npx playwright install --with-deps chromium'
+            
 
          }
       }

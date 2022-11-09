@@ -1,5 +1,10 @@
 FROM jenkins/jenkins:jdk11
 USER root
+
+FROM mcr.microsoft.com/playwright:v1.27.1-focal
+RUN npx playwright install-deps 
+RUN npx playwright install-deps --dry-run
+
 RUN apt-get update && apt-get install -y lsb-release
 RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
   https://download.docker.com/linux/debian/gpg

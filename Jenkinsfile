@@ -3,7 +3,7 @@ pipeline {
    stages {
       stage('e2e-tests') {
          steps {
-            
+            sh "/var/lib/.../ru.yandex.qatools.allure.jenkins.tools.AllureCommandlineInstallation/../bin/allure --version"
             sh 'npm install'
             sh 'npm i -D @playwright/test allure-playwright'
             sh 'npx playwright test'

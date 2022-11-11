@@ -10,10 +10,8 @@ pipeline {
             
          }
       }
-   }
 
-
-   stage('Generate Allure Reports') {
+       stage('Generate Allure Reports') {
         steps {
             script {
                 allure([
@@ -26,4 +24,8 @@ pipeline {
             }
         }
     }
+   }
+
+
+  
 }

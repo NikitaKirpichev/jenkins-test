@@ -11,14 +11,15 @@ pipeline {
          }
       }
 
-       post {
-        always {
-           unstash 'allure-results' //extract results
-           allure results: [[path: 'target/allure-results']]
-        }   
+         
     }
    }
 
+   post {
+        always {
+           unstash 'allure-results' //extract results
+           allure results: [[path: 'target/allure-results']]
+        } 
 
   
 }

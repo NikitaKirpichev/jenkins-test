@@ -3,10 +3,11 @@ pipeline {
    stages {
       stage('e2e-tests') {
          steps {
-            // Depends on your language / test framework
+            
             sh 'npm install'
-            sh 'npx playwright test'
             sh 'npm i -D @playwright/test allure-playwright'
+            sh 'npx playwright test'
+            
          }
       }
    }

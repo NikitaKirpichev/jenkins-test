@@ -10,21 +10,14 @@ pipeline {
             
          }
       }
+
+      stage('Generate Report') {
+       steps {
+             sh './node_modules/.bin/allure generate ./allure-results'
+         }
+      }
    }
 
-   post {
-        always {
-            unstash 'allure-results' //extract results
-            script {
-                allure([
-                includeProperties: false,
-                jdk: '',
-                properties: [],
-                reportBuildPolicy: 'ALWAYS',
-                results: [[path: 'allure-results']]
-            ])
-            }
-        }
-    }
+
   
 }

@@ -14,7 +14,7 @@ pipeline {
 
       stage('Generate Report') {
        steps {
-             sh './node_modules/.bin/allure generate ./allure-results'
+            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
          }
       }
    }

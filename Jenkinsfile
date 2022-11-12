@@ -6,7 +6,7 @@ pipeline {
             
             sh 'npm install'
             sh 'npm i -D @playwright/test allure-playwright'
-            sh 'npx playwright test'
+            sh 'npx playwright test --reporter=line,allure-playwright'
             
          }
       }

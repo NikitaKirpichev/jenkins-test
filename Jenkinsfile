@@ -11,19 +11,11 @@ pipeline {
          }
       }
 
-       stage('Generate Allure Reports') {
+      stage('Generate Allure Reports') {
         steps {
-            script {
-                allure([
-                    includeProperties: false,
-                    jdk: '',
-                    properties: [[key: 'allure.issues.tracker.pattern', value: 'http://tracker.company.com/%s']],
-                    reportBuildPolicy: 'ALWAYS',
-                    results: [[path: './allure-results']]
-                    ])
-            }
+           allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
         }
-    }
+      }
    }
 
 

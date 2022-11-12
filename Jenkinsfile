@@ -5,7 +5,8 @@ pipeline {
          steps {
             
             sh 'npm install'
-            sh 'npm i -D @playwright/test allure-playwright'
+            sh 'npm i -D @playwright/test'
+            sh 'npm i allure-playwright'
             sh 'npx playwright test'
             
          }

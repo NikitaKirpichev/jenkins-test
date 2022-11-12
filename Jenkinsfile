@@ -6,17 +6,25 @@ pipeline {
             
             sh 'npm install'
             sh 'npm i -D @playwright/test allure-playwright'
-            sh 'npx playwright test --reporter=line,allure-playwright'
+            sh 'npx playwright test'
             
          }
       }
-
-      stage('Generate Allure Reports') {
-        steps {
-           allure includeProperties: false, jdk: '', results: [[path: './allure-results']]
-      }
    }
 
-   }
+   post {
+        always {
+            unstash 'allure-results' //extract results
+            script {
+                allure([
+                includeProperties: false,
+                jdk: '',
+                properties: [],
+                reportBuildPolicy: 'ALWAYS',
+                results: [[path: 'allure-results']]
+            ])
+            }
+        }
+    }
   
 }

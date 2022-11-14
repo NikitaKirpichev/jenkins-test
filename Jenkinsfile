@@ -1,29 +1,23 @@
 pipeline {
    agent { docker { image 'mcr.microsoft.com/playwright:v1.27.1-focal' } }
+   tools { jdk 'JDK11'}
    stages {
-
-      stage('java'){
-         steps{
-            sh 'java -version'
+      stage('e2e-tests') {
+         steps {
+            
+            sh 'npm install'
+            sh 'npm i -D @playwright/test'
+            sh 'npm i allure-playwright'
+            sh 'npx playwright test'
+            
          }
       }
-
-      // stage('e2e-tests') {
-      //    steps {
-            
-      //       sh 'npm install'
-      //       sh 'npm i -D @playwright/test'
-      //       sh 'npm i allure-playwright'
-      //       sh 'npx playwright test'
-            
-      //    }
-      // }
       
-      // stage('allure'){
-      //    steps{
-      //       allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
-      //    }
-      // }
+      stage('allure'){
+         steps{
+            allure includeProperties: false, jdk: 'JDK11', results: [[path: 'target/allure-results']]
+         }
+      }
 
       
    }

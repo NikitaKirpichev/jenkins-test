@@ -1,6 +1,5 @@
 pipeline {
    agent { docker { image 'mcr.microsoft.com/playwright:v1.27.1-focal' } }
-   tools { jdk 'JDK11'}
    stages {
       stage('e2e-tests') {
          steps {

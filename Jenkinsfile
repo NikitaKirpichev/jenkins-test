@@ -1,6 +1,5 @@
 pipeline {
    agent { docker { image 'mcr.microsoft.com/playwright:v1.27.1-focal' } }
-   tools { jdk 'JDK11'}
    stages {
       stage('e2e-tests') {
          steps {
@@ -15,7 +14,7 @@ pipeline {
       
       stage('allure'){
          steps{
-            allure includeProperties: false, jdk: 'JDK11', results: [[path: 'target/allure-results']]
+            allure includeProperties: false, jdk: '/var/jenkins_home/tools/hudson.model.JDK/JDK11/jdk-11.0.1/', results: [[path: 'target/allure-results']]
          }
       }
 

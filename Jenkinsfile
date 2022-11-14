@@ -8,27 +8,15 @@ pipeline {
             sh 'npm i -D @playwright/test'
             sh 'npm i allure-playwright'
             sh 'npx playwright test'
+            
          }
       }
-stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-      stage('reports') {
-    steps {
-    script {
-            allure([
-                    includeProperties: false,
-                    jdk: '',
-                    properties: [],
-                    reportBuildPolicy: 'ALWAYS',
-                    results: [[path: 'target/allure-results']]
-            ])
-    }
-    }
-}
-      
+
+      stage('allure'){
+         steps{
+            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+         }
+      }
    }
 
 

@@ -1,5 +1,8 @@
 pipeline {
    agent { docker { image 'mcr.microsoft.com/playwright:v1.27.1-focal' } }
+   tools {
+        maven 'Maven 3.8.6' 
+        }  
    stages {
       stage('e2e-tests') {
          steps {

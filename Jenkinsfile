@@ -1,5 +1,5 @@
 pipeline {
-   agent { docker { image 'mcr.microsoft.com/playwright:v1.27.1-focal' } }
+   agent { docker { image 'myjenkins-blueocean:2.361.3-1' } }
    stages {
       stage('e2e-tests') {
          steps {

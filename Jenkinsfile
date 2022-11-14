@@ -15,9 +15,9 @@ agent any
       }
       stage('allure'){
          steps{
-            '/var/jenkins_home/tools/ru.yandex.qatools.allure.jenkins.tools.AllureCommandlineInstallation/2.20.1/bin/allure generate -c -o ./allure-results'
+            sh './var/jenkins_home/tools/ru.yandex.qatools.allure.jenkins.tools.AllureCommandlineInstallation/2.20.1/bin/allure generate -c -o ./allure-results'
          }
       }
-      
+
    }
 }

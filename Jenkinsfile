@@ -13,22 +13,10 @@ agent any
          }
 
       }
-   
-
-      
+      stage('allure'){
+         steps{
+            allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results.']]
+         }
+      }
    }
-    post {
-        always {
-            script {
-                allure([
-                includeProperties: false,
-                jdk: '',
-                properties: [],
-                reportBuildPolicy: 'ALWAYS',
-                results: [[path: 'allure-results']]
-            ])
-            }
-        }
-    }
-
 }

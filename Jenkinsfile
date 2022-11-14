@@ -19,7 +19,6 @@ agent any
    }
     post {
         always {
-            unstash 'allure-results' //extract results
             script {
                 allure([
                 includeProperties: false,

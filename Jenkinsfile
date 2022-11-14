@@ -1,5 +1,4 @@
 pipeline {
-   agent { docker { image 'mcr.microsoft.com/playwright:v1.27.1-focal' } }
    stages {
       stage('e2e-tests') {
          steps {
@@ -8,12 +7,13 @@ pipeline {
             sh 'npm i -D @playwright/test'
             sh 'npm i allure-playwright'
             sh 'npx playwright test'
+
          }
       }
       
       stage('allure'){
          steps{
-            sh 'docker exec jenkins-docker /var/jenkins_home/tools/ru.yandex.qatools.allure.jenkins.tools.AllureCommandlineInstallation/2.20.1/bin/allure generate -c -o /var/jenkins_home/workspace/test/allure-report'
+            allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
          }
       }
 

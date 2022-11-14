@@ -9,16 +9,27 @@ agent any
             sh 'npm i -D @playwright/test'
             sh 'npm i allure-playwright'
             sh 'npx playwright test'
-            allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
+
          }
 
-         
       }
-      
-      
+   
 
       
    }
-
+    post {
+        always {
+            unstash 'allure-results' //extract results
+            script {
+                allure([
+                includeProperties: false,
+                jdk: '',
+                properties: [],
+                reportBuildPolicy: 'ALWAYS',
+                results: [[path: 'allure-results']]
+            ])
+            }
+        }
+    }
 
 }

@@ -9,12 +9,10 @@ agent any
             sh 'npm i -D @playwright/test'
             sh 'npm i allure-playwright'
             sh 'npx playwright test'
-
-         }
-
-         steps{
             allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
          }
+
+         
       }
       
       

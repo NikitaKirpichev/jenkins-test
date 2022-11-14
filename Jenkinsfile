@@ -12,16 +12,11 @@ pipeline {
             
          }
       }
-      stage('java') {
-         steps {
-            
-            sh '''
-               env | grep -e PATH -e JAVA_HOME
-               which java
-               java -version 
-            '''
+      
+      stage('allure'){
+         steps{
+            allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
          }
-         
       }
 
       

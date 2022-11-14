@@ -10,12 +10,7 @@ pipeline {
 
          }
       }
-      
-      stage('allure'){
-         steps{
-            allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
-         }
-      }
+
 
       
    }

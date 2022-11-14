@@ -10,7 +10,11 @@ pipeline {
             sh 'npx playwright test'
          }
       }
-
+stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
       stage('reports') {
     steps {
     script {

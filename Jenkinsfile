@@ -1,5 +1,6 @@
 pipeline {
    agent { docker { image 'mcr.microsoft.com/playwright:v1.27.1-focal' } }
+   tools { allure-cli '2.20.1' }
    stages {
       stage('e2e-tests') {
          steps {

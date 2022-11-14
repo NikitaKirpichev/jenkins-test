@@ -11,6 +11,7 @@ pipeline {
             sh 'npx playwright test'
             
          }
+      }
       stage('java') {
          steps {
             
@@ -27,5 +28,4 @@ pipeline {
    }
 
 
-   }
 }

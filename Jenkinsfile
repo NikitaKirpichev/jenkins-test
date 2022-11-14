@@ -3,7 +3,9 @@ pipeline {
    stages {
 
       stage('java'){
-         sh 'java -version'
+         steps{
+            sh 'java -version'
+         }
       }
 
       // stage('e2e-tests') {

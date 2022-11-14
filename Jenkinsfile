@@ -9,9 +9,17 @@ pipeline {
             sh 'npm i -D @playwright/test'
             sh 'npm i allure-playwright'
             sh 'npx playwright test'
-            sh 'java --version'
+            
          }
-
+      stage('java') {
+         steps {
+            
+            sh '''
+               env | grep -e PATH -e JAVA_HOME
+               which java
+               java -version 
+            '''
+         }
          
       }
 

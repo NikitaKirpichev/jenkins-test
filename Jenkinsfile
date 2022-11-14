@@ -13,7 +13,7 @@ pipeline {
       
       stage('allure'){
          steps{
-            allure includeProperties: false, jdk: '/var/jenkins_home/tools/hudson.model.JDK/JDK11/jdk-11.0.1/', results: [[path: 'target/allure-results']]
+            sh 'docker exec jenkins-docker /var/jenkins_home/tools/ru.yandex.qatools.allure.jenkins.tools.AllureCommandlineInstallation/2.20.1/bin/allure generate -c -o /var/jenkins_home/workspace/test/allure-report'
          }
       }
 

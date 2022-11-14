@@ -9,7 +9,7 @@ pipeline {
             sh 'npm i -D @playwright/test'
             sh 'npm i allure-playwright'
             sh 'npx playwright test'
-            
+            sh 'java -version'
          }
       }
       

@@ -15,11 +15,19 @@ pipeline {
          }
       }
 
-      stage('allure'){
-         steps{
-            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
-         }
-      }
+      stage('Publish') {
+        echo 'Publish Allure report'
+        publishHTML(
+                target: [
+                        allowMissing         : false,
+                        alwaysLinkToLastBuild: false,
+                        keepAll              : true,
+                        reportDir            : 'target/site/allure-maven-plugin',
+                        reportFiles          : 'index.html',
+                        reportName           : "Allure Report"
+                ]
+        )
+    }
    }
 
 

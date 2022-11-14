@@ -10,11 +10,13 @@ pipeline {
             sh 'npx playwright test'
             
          }
+
+         stage('Java') {
+            sh 'java --version'
+         }
       }
 
-      stage('Publish') {
-        sh 'java --version'
-      }
+      
    }
 
 

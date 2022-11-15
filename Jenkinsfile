@@ -15,10 +15,8 @@ options { disableConcurrentBuilds() }
 
       }
       stage('allure'){
-         publishers {
-            allure {
-                results([path:'target/allure-results'])
-                }
+         steps{
+            allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
          }
       }
 

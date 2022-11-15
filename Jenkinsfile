@@ -11,7 +11,6 @@ options { disableConcurrentBuilds() }
             sh 'npm i allure-playwright'
             sh 'npx playwright test'
             sh 'npm i allure-commandline'
-            sh 'allure generate ./allure-results'
          }
 
       }

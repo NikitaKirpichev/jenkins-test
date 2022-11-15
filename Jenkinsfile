@@ -2,6 +2,7 @@ pipeline {
 agent any
 ws('allure')
    stages {
+      ws('allure')
       stage('e2e-tests') {
          agent { docker { image 'mcr.microsoft.com/playwright:v1.27.1-focal' } }
 
@@ -15,9 +16,7 @@ ws('allure')
 
       }
       stage('allure'){
-         
          steps{
-            
             allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
          }
       }

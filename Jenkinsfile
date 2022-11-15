@@ -1,6 +1,6 @@
 pipeline {
 agent any
-options { disableConcurrentBuilds() }
+ws('allure')
    stages {
       stage('e2e-tests') {
          agent { docker { image 'mcr.microsoft.com/playwright:v1.27.1-focal' } }
@@ -17,7 +17,7 @@ options { disableConcurrentBuilds() }
       stage('allure'){
          
          steps{
-            ws('allure')
+            
             allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
          }
       }

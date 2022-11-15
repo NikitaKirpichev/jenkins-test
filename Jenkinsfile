@@ -1,5 +1,5 @@
 pipeline {
-agent {label 'allure'}
+agent any
 
    stages {
       
@@ -17,6 +17,7 @@ agent {label 'allure'}
 
       }
       stage('allure'){
+         agent { docker { image 'mcr.microsoft.com/playwright:v1.27.1-focal' } }
          steps{
             allure includeProperties: false, jdk: '', results: [[path: '**/target/allure-results']]
       }

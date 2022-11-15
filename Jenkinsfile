@@ -1,6 +1,6 @@
 pipeline {
 agent any
-ws('allure')
+
    stages {
       
       stage('e2e-tests') {

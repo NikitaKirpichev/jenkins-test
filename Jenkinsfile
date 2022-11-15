@@ -17,7 +17,7 @@ agent any
 
       }
       stage('allure'){
-         agent { docker { image 'mcr.microsoft.com/playwright:v1.27.1-focal' } }
+         agent any
          steps{
             allure includeProperties: false, jdk: '', results: [[path: '**/target/allure-results']]
       }

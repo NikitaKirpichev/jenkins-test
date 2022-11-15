@@ -1,6 +1,6 @@
 pipeline {
-agent any
-ws('/var/jenkins_home/workspace/allure'){
+agent {label 'allure'}
+
    stages {
       
       stage('e2e-tests') {
@@ -22,5 +22,4 @@ ws('/var/jenkins_home/workspace/allure'){
       }
    }
    }
-}
 }

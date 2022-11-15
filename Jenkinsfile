@@ -3,9 +3,10 @@ agent any
 options { disableConcurrentBuilds() }
    stages {
       stage('e2e-tests') {
-         agent { docker { image 'mcr.microsoft.com/playwright:v1.27.1-focal' } }
 
          steps {
+                     agent { docker { image 'mcr.microsoft.com/playwright:v1.27.1-focal' } }
+
             sh 'npm install'
             sh 'npm i -D @playwright/test'
             sh 'npm i allure-playwright'

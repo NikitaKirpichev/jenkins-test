@@ -1,6 +1,6 @@
 pipeline {
 agent any
-
+ws("/var/jenkins_home/workspace/allure")
    stages {
       
       stage('e2e-tests') {
@@ -18,7 +18,7 @@ agent any
       }
       stage('allure'){
          steps{
-            ws("/var/jenkins_home/workspace/allure")
+            
             allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
          }
       }

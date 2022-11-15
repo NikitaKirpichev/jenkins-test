@@ -21,4 +21,5 @@ agent any
             allure includeProperties: false, jdk: '', results: [[path: '../allure/target/allure-results']]
       }
    }
+   }
 }

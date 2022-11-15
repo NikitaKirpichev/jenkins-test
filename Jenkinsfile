@@ -16,7 +16,7 @@ options { disableConcurrentBuilds() }
       }
       stage('allure'){
          steps{
-            ws(allure+"/allure-results/")
+            ws(allure)
             allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
          }
       }

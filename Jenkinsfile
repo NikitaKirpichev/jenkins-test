@@ -2,7 +2,7 @@ pipeline {
 agent any
 
    stages {
-      ws("/var/jenkins_home/workspace/allure")
+      
       stage('e2e-tests') {
          agent { docker { image 'mcr.microsoft.com/playwright:v1.27.1-focal' } }
 

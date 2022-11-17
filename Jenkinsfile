@@ -10,7 +10,7 @@ agent any
             sh '''
                npm install
                npx playwright install chromium
-               npx playwright test --project=chromium 
+               npx playwright test --project="Google Chrome" 
             '''
          }
 

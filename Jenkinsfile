@@ -10,21 +10,12 @@ agent any
             sh '''
                npm install
                npx playwright install
-            '''
-         }
-
-      }
-
-      stage('test') {
-         agent { docker { image 'mcr.microsoft.com/playwright:v1.28.0-jammy' } }
-
-         steps {
-            sh '''
                npx playwright test
             '''
          }
 
       }
+
       stage('allure'){
          agent any
          steps{

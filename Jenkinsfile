@@ -9,7 +9,7 @@ agent any
          steps {
             
             
-            sh '''
+            sh ''''
                set +e
                'npm install'
                'npx playwright test'

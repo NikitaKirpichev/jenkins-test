@@ -8,9 +8,12 @@ agent any
 
          steps {
             
-            sh 'npm install'
-            sh 'npx playwright test --global-timeout 50000'
             
+            sh '''
+               set +e
+               'npm install'
+               'npx playwright test --global-timeout 50000'
+            '''
          }
 
       }

@@ -9,7 +9,7 @@ agent any
          steps {
             
             sh 'npm install'
-            sh 'docker npx playwright test'
+            sh 'npx playwright test'
             
          }
 

@@ -25,7 +25,9 @@ agent any
       }
 
       stage('notification'){
-         googlechatnotification message: 'Test alert ', notifySuccess: true, url: ' https://chat.googleapis.com/v1/spaces/AAAAdNUlRFA/messages?threadKey=jenkins'
+         agent any{
+            googlechatnotification message: 'Test alert ', notifySuccess: true, url: ' https://chat.googleapis.com/v1/spaces/AAAAdNUlRFA/messages?threadKey=jenkins'
+         }
       }
    }
 }

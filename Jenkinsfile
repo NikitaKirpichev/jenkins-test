@@ -8,7 +8,7 @@ agent any
 
          steps {     
             sh '''
-               'npx playwright test'
+               npx playwright test
             '''
          }
 
@@ -19,7 +19,7 @@ agent any
 
          steps {
             sh '''
-               'npx playwright test'
+               npx playwright test
             '''
          }
 

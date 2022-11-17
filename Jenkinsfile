@@ -4,7 +4,7 @@ agent any
    stages {
       
       stage('e2e-tests') {
-         agent { docker { image 'mcr.microsoft.com/playwright:v1.27.1-focal' } }
+         agent { docker { image 'mcr.microsoft.com/playwright:v1.28.0-focal' } }
 
          steps {
             

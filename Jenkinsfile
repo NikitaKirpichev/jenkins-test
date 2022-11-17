@@ -9,6 +9,7 @@ agent any
          steps {     
             sh '''
                npm install
+               npx playwright install
             '''
          }
 

@@ -3,15 +3,22 @@ agent any
 
    stages {
       
-      stage('e2e-tests') {
+      stage('install') {
+         agent { docker { image 'mcr.microsoft.com/playwright:v1.28.0-jammy' } }
+
+         steps {     
+            sh '''
+               'npx playwright test'
+            '''
+         }
+
+      }
+
+      stage('test') {
          agent { docker { image 'mcr.microsoft.com/playwright:v1.28.0-jammy' } }
 
          steps {
-            
-            
-            sh ''''
-               set +e
-               'npm install'
+            sh '''
                'npx playwright test'
             '''
          }

@@ -9,7 +9,6 @@ agent any
          steps {     
             sh '''
                npm install
-               npx playwright install-deps
                npx playwright test --project="Google Chrome" 
             '''
          }

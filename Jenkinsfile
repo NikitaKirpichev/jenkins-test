@@ -7,11 +7,10 @@ agent any
          agent { docker { image 'mcr.microsoft.com/playwright:v1.28.0-jammy' } }
 
          steps {     
-            sh '''
-               npm install
-               npx playwright install
-               npx playwright test --project="Google Chrome" 
-            '''
+            sh 'npm install'
+            sh 'npm i -D @playwright/test'
+            sh 'npm i allure-playwright'
+            sh 'npx playwright test'
          }
 
       }

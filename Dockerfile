@@ -1,4 +1,5 @@
 FROM jenkins/jenkins:jdk11
+FROM mcr.microsoft.com/playwright:v1.28.0-jammy
 USER root
 RUN apt-get update && apt-get install -y lsb-release
 RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \

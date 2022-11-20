@@ -21,12 +21,12 @@ agent any
             allure includeProperties: false, jdk: '', results: [[path: '**/target/allure-results']]
          }
       }
-      stage('notififcation'){
+
+      stage('notification'){
          agent any
          steps{
-            googlechatnotification message: 'Test notification', notifyAborted: true, notifyFailure: true, notifyNotBuilt: true, notifySuccess: true, url: 'https://chat.googleapis.com/v1/spaces/AAAAdNUlRFA/messages?threadKey=jenkins'
-         }
+            googlechatnotification message: 'Test notification', notifyAborted: true, notifyFailure: true, notifyNotBuilt: true, notifySuccess: true, url: 'https://chat.googleapis.com/v1/spaces/AAAAdNUlRFA/messages?threadKey=jenkins'         }
       }
-   }
+
    }
 }

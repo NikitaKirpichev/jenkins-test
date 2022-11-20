@@ -19,8 +19,8 @@ agent any
          agent any
          steps{
             allure includeProperties: false, jdk: '', results: [[path: '**/target/allure-results']]
+         }
       }
-
       stage('notififcation'){
          agent any
          steps{
